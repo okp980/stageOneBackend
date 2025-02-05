@@ -32,7 +32,7 @@ app.get("/api/classify-number", async (req, res) => {
       is_prime: isPrime(number),
       is_perfect: isPerfectNumber(number),
       properties: checkNumberProperties(number),
-      digit_sum: sumDigits(req?.query?.number),
+      digit_sum: parseInt(sumDigits(req?.query?.number)),
       fun_fact: result?.text,
     })
   } catch (error) {
