@@ -7,17 +7,20 @@ A simple express application that for the HNG stage 0 task for backend
 - Clone project into directory
 - `cd` into directory
 - run `npm install`to install all dependencies
-- run `nm start` to start project
+- run `node index.mjs` to start project
 
 ### API documentation
 
-- When you send a request to `/`, the server returns:
+- When you send a request to `/api/classify-number?number=371`, the server returns:
 
 ```json
 {
-  "email": "okpunorrex@gmail.com",
-  "current_datetime": "2025-01-31T08:43:31.867Z",
-  "github_url": "https://github.com/okp980/stage0"
+  "number": 371,
+  "is_prime": false,
+  "is_perfect": false,
+  "properties": ["armstrong", "odd"],
+  "digit_sum": 11, // sum of its digits
+  "fun_fact": "371 is an Armstrong number because 3^3 + 7^3 + 1^3 = 371"
 }
 ```
 
