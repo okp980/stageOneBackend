@@ -16,7 +16,7 @@ app.use(cors())
 app.get("/api/classify-number", async (req, res) => {
   try {
     const number = parseInt(req.query.number)
-    if (!number) {
+    if (!Number.isInteger(number) || number < 0) {
       return res.status(400).json({
         number: "alphabet",
         error: true,

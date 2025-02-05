@@ -20,13 +20,6 @@ export function isPerfectNumber(n) {
   // equals the original number
   const isPerfect = sum === n
 
-  // Output the result
-  if (isPerfect) {
-    console.log(`${n} is a perfect number.`)
-  } else {
-    console.log(`${n} is not a perfect number.`)
-  }
-
   return isPerfect
 }
 
