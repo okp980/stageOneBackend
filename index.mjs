@@ -14,6 +14,8 @@ const port = 3000
 app.use(cors())
 
 app.get("/api/classify-number", async (req, res) => {
+  console.log("req.query.number ==>", req.query.number)
+
   try {
     const number = parseInt(req.query.number)
     if (!Number.isInteger(number)) {
