@@ -36,7 +36,9 @@ app.get("/api/classify-number", async (req, res) => {
       fun_fact: result?.text,
     })
   } catch (error) {
-    res.status(500).json({ error: true })
+    console.log(error)
+
+    res.status(501).json({ error: true })
   }
 })
 
