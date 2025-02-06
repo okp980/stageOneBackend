@@ -18,7 +18,7 @@ app.get("/api/classify-number", async (req, res) => {
 
   try {
     const number = parseInt(req.query.number)
-    if (!Number.isInteger(number)) {
+    if (!Number.isInteger(number) || req.query.number.includes("null")) {
       return res.status(400).json({
         number: "alphabet",
         error: true,
@@ -40,7 +40,7 @@ app.get("/api/classify-number", async (req, res) => {
   } catch (error) {
     console.log(error)
 
-    res.status(501).json({ error: true })
+    res.status(500).json({ error: true })
   }
 })
 
