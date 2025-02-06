@@ -37,6 +37,7 @@ export function isPrime(num) {
 
 export function sumDigits(num) {
   return num.split("").reduce((prev, curr) => {
+    if (curr === "-") return prev
     return prev + parseInt(curr)
   }, 0)
 }
